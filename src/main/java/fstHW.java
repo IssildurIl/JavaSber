@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class fstHW {
     public static void main(String[] args) {
         int[] Array;
-        int max=60;
+        int max=100;
         int min=10;
-        int len=10;
+        int len=11;
         Array = new int[len];
         for (int i=0;i<len;i++){
             Array[i]= (int) ((Math.random() * (max - min)) + min);
@@ -32,6 +32,7 @@ public class fstHW {
                 fst = pos + 1;    // иначе увеличиваем на 1
             }
             pos = (fst + lst) / 2;
+        }
             if (fst <= lst) {
                 System.out.println(num + " является " + ++pos + " элементом в массиве");
             } else {
@@ -39,4 +40,3 @@ public class fstHW {
             }
         }
     }
-}
