@@ -7,7 +7,7 @@ public class Filework {
 
     public static void main(String[] args) throws IOException {
         String path = "src/main/java/HW2/parsetext.txt";
-        //Задание 1: Подсчитайте количество различных слов в файле.
+        /*//Задание 1: Подсчитайте количество различных слов в файле.
         countWord(path);
 
         //Задание 2: Выведите на экран список различных слов файла, отсортированный по возрастанию их длины
@@ -21,6 +21,8 @@ public class Filework {
         reversiter(path);
         //Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
         arrlst(path);
+        //ААААААААААААвтомобили*/
+        bipbip();
     }
 
     public static void countWord(String filename) throws IOException {
@@ -88,7 +90,7 @@ public class Filework {
     public static void countEvWord(String filename) throws IOException {
         File file = new File(filename);
         FileReader fr = new FileReader(file);
-        HashMap<String, Integer> text = new HashMap<String, Integer>();
+            HashMap<String, Integer> text = new HashMap<String, Integer>();
         BufferedReader reader = new BufferedReader(fr);
         String line = reader.readLine();
         int value;
@@ -169,5 +171,29 @@ public class Filework {
             }
         }
 
+    }
+
+    public static void bipbip(){
+            HashMap<String, String> car = new HashMap<String, String>();
+            car.put("Лада", "седан");
+            car.put("Лада", "хэтчбек");
+            car.put("Мерседес", "седан");
+            car.put("Бмв", "кроссовер");
+            car.put("Форд", "хэтчбек");
+            car.put("Пежо", "кроссовер");
+            car.put("Мерседес", "седан");
+            HashMap<String, HashSet<String>> type = new HashMap<String, HashSet<String>>();
+            HashSet<String> tempSet = new HashSet<String>();
+            for (Map.Entry<String, String> t : car.entrySet()) {
+                if (type.containsKey(t.getKey())){
+                    tempSet=type.get(t.getKey());
+                    tempSet.add(t.getValue());
+                    type.put(t.getKey(),tempSet);
+                }else{
+                    tempSet.add(t.getValue());
+                    type.put(t.getKey(),tempSet);
+                }
+                System.out.println(t.getKey()+" "+t.getValue());
+            }
     }
 }
